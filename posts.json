@@ -1,0 +1,122 @@
+[
+    {
+        "id": 1,
+        "title": "Getting Started with Node.js",
+        "content": "Node.js is a powerful runtime environment for JavaScript...",
+        "author": "John Smith",
+        "tags": [
+            "programming",
+            "nodejs",
+            "javascript"
+        ],
+        "createdAt": "2024-02-15T08:30:00Z"
+    },
+    {
+        "id": 2,
+        "title": "Express.js Best Practices",
+        "content": "When building APIs with Express, there are several key practices...",
+        "author": "Sarah Johnson",
+        "tags": [
+            "express",
+            "nodejs",
+            "webdev"
+        ],
+        "createdAt": "2024-02-14T15:45:00Z"
+    },
+    {
+        "id": 3,
+        "title": "Understanding REST APIs",
+        "content": "REST (Representational State Transfer) is an architectural style...",
+        "author": "Michael Brown",
+        "tags": [
+            "api",
+            "rest",
+            "backend"
+        ],
+        "createdAt": "2024-02-13T11:20:00Z"
+    },
+    {
+        "id": 4,
+        "title": "MongoDB vs PostgreSQL",
+        "content": "Choosing between MongoDB and PostgreSQL depends on your needs...",
+        "author": "Emily Davis",
+        "tags": [
+            "database",
+            "mongodb",
+            "postgresql"
+        ],
+        "createdAt": "2024-02-12T09:15:00Z"
+    },
+    {
+        "id": 5,
+        "title": "JavaScript Async/Await Tutorial",
+        "content": "Async/await is a modern way to handle asynchronous operations...",
+        "author": "James Wilson",
+        "tags": [
+            "javascript",
+            "async",
+            "programming"
+        ],
+        "createdAt": "2024-02-11T14:25:00Z"
+    },
+    {
+        "id": 6,
+        "title": "Web Security Fundamentals",
+        "content": "Security is crucial for any web application. Here's what you need...",
+        "author": "Lisa Anderson",
+        "tags": [
+            "security",
+            "web",
+            "authentication"
+        ],
+        "createdAt": "2024-02-10T16:40:00Z"
+    },
+    {
+        "id": 7,
+        "title": "Docker for Beginners",
+        "content": "Docker containers make it easy to package and deploy applications...",
+        "author": "William Thomas",
+        "tags": [
+            "docker",
+            "devops",
+            "containers"
+        ],
+        "createdAt": "2024-02-09T13:50:00Z"
+    },
+    {
+        "id": 8,
+        "title": "API Testing Strategies",
+        "content": "Effective API testing ensures your endpoints work as expected...",
+        "author": "Rachel Green",
+        "tags": [
+            "testing",
+            "api",
+            "quality"
+        ],
+        "createdAt": "2024-02-08T10:35:00Z"
+    },
+    {
+        "id": 9,
+        "title": "Git Workflow Tips",
+        "content": "Improve your Git workflow with these professional tips...",
+        "author": "David Miller",
+        "tags": [
+            "git",
+            "version-control",
+            "collaboration"
+        ],
+        "createdAt": "2024-02-07T12:15:00Z"
+    },
+    {
+        "id": 10,
+        "title": "CSS Grid Layout Guide",
+        "content": "Master CSS Grid to create responsive and flexible layouts...",
+        "author": "Emma Wilson",
+        "tags": [
+            "css",
+            "frontend",
+            "web-design"
+        ],
+        "createdAt": "2024-02-06T17:20:00Z"
+    }
+]

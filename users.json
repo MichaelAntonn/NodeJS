@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "name": "John Smith",
+        "email": "john.smith@email.com",
+        "age": 32,
+        "city": "New York"
+    },
+    {
+        "id": 2,
+        "name": "Sarah Johnson",
+        "email": "sarah.j@email.com",
+        "age": 28,
+        "city": "Los Angeles"
+    },
+    {
+        "id": 3,
+        "name": "Michael Brown",
+        "email": "mbrown@email.com",
+        "age": 45,
+        "city": "Chicago"
+    },
+    {
+        "id": 4,
+        "name": "Emily Davis",
+        "email": "emily.davis@email.com",
+        "age": 24,
+        "city": "Houston"
+    },
+    {
+        "id": 5,
+        "name": "James Wilson",
+        "email": "jwilson@email.com",
+        "age": 39,
+        "city": "Phoenix"
+    },
+    {
+        "id": 6,
+        "name": "Lisa Anderson",
+        "email": "lisa.a@email.com",
+        "age": 31,
+        "city": "Philadelphia"
+    },
+    {
+        "id": 7,
+        "name": "Daniel Lee",
+        "email": "dlee@email.com",
+        "age": 27,
+        "city": "San Francisco"
+    },
+    {
+        "id": 8,
+        "name": "David Thomas",
+        "email": "david.t@email.com",
+        "age": 42,
+        "city": "San Diego"
+    },
+    {
+        "id": 9,
+        "name": "Jane Brown",
+        "email": "jbrown@email.com",
+        "age": 36,
+        "city": "San Jose"
+    },
+    {
+        "id": 10,
+        "name": "Olivia Wilson",
+        "email": "owilson@email.com",
+        "age": 30,
+        "city": "Seattle"
+    }
+]
