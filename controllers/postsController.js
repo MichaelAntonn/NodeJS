@@ -16,17 +16,22 @@ const createPost = async (req, res, next) => {
 const getPosts = async (req, res) => {
   const limit = Number(req.query.limit) || 10;
   const page = Number(req.query.page) || 1;
+  const userId = req.user?._id;
 
   const postsCount = await Post.countDocuments();
   const numberOfPages = Math.ceil(postsCount / limit);
 
   const posts = await Post.find()
     .skip((page - 1) * limit) // get posts for the current page
-    .limit(limit);
+    .limit(limit)
+    .populate("author", "name email");
   if (!posts?.length) {
     throw new APIError(404, "No posts found");
   }
-
+  const postsWithFlag = posts.map((post) => ({
+    ...post.toObject(),
+    isMine: userId && post.author._id.toString() === userId.toString(),
+  }));
   const pagination = {
     page,
     numberOfPages,
@@ -35,25 +40,35 @@ const getPosts = async (req, res) => {
     prev: page > 1,
   };
 
-  res.status(200).json({ posts, pagination });};
+  res.status(200).json({ posts: postsWithFlag , pagination });};
 
 // Get a single post by ID
 const getPostById = async (req, res) => {
+  const userId = req.user?._id;
   const post = await Post.findById(req.params.id).populate("author");
   if (!post) {
     throw new APIError(404, "Post not found");
   }
-
-  res.status(200).json(post);
+  const postWithFlag = {
+    ...post.toObject(),
+    isMine: userId && post.author._id.toString() === userId.toString(),
+  };
+  res.status(200).json(postWithFlag);
 };
 
 // Update a post by ID
 const updatePostById = async (req, res) => {
   const postId = req.params.id;
+  const userId = req.user._id;
   const postData = req.body;
+  const post = await Post.findOne({ _id: postId, author: userId });
 
-  const updatedPost = await Post.findOneAndUpdate(
-    { _id: postId },
+  if (!post) {
+    throw new APIError(404, `Post with id: ${postId} not found or you are not authorized to update it`);
+  }
+
+  const updatedPost = await Post.findOne(
+    { _id: postId, author: userId },
     { title: postData.title, content: postData.content },
     {
       new: true,
@@ -71,12 +86,16 @@ const updatePostById = async (req, res) => {
 // Delete a post by ID
 const deletePostById = async (req, res) => {
   const postId = req.params.id;
-  const deletedPost = await Post.findByIdAndDelete(postId);
+  const userId = req.user._id; 
+
+
+  const deletedPost = await Post.findOneAndDelete({ _id: postId, author: userId });
 
   if (!deletedPost) {
-    throw new APIError(404, `Post with id: ${postId} not found`);
+    throw new APIError(404, `Post with id: ${postId} not found or you are not authorized to delete it`);
   }
-  res.status(204).json();
+
+  res.status(204).json(); 
 };
 
 module.exports = {
